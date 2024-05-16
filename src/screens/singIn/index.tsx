@@ -7,9 +7,9 @@ export default function SingIn() {
   return (
     <View className='flex h-full justify-center items-center'>
         <View className='flex h-5/6 b w-10/12 justify-evenly'>
-            <View className='flex-row items-center justify-between'>
+            <View className='flex-row items-end justify-between'>
                 <Text className='text-black font-semibold text-3xl'>Hello{'\n'}Welcome!</Text>
-                <Image source={require('../../../assets/images/controlo-remoto.png')}  style={{width: 120, height: 120}}/>
+                <Image source={require('../../../assets/images/controlo-remoto.png')}  style={{width: 110, height: 110}}/>
             </View>
             <View>
             <InputForm placeholderText="Phone Number or Email" autoCapitalize="none" autoCorrect={false} keyboardType="default" />

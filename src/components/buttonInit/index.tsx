@@ -1,9 +1,27 @@
-import { Text, TouchableOpacity } from 'react-native'
+import React from 'react';
+import { Text, TouchableOpacity } from 'react-native';
 
-export default function ButtonInit({textButton, hasBackground} : {textButton: string, hasBackground: boolean}) {
+interface ButtonInitProps {
+  textButton: string;
+  hasBackground: boolean;
+  onPress?: () => void;
+}
+
+export default function ButtonInit({ textButton, hasBackground, onPress }: ButtonInitProps) {
   return (
-    <TouchableOpacity className='rounded-xl p-3.5 w-full mb-3 justify-center, items-center' style={[ hasBackground ? { backgroundColor: '#00bcd4' } : { backgroundColor: '#fff' }]}>
-      <Text style={[ hasBackground ? { color: '#fff' } : { color: '#00bcd4' }]} className='text-white font-bold text-base'>{textButton}</Text>
+    <TouchableOpacity
+      style={{
+        borderRadius: 8,
+        padding: 14,
+        width: '100%',
+        marginBottom: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: hasBackground ? '#00bcd4' : '#fff',
+      }}
+      onPress={onPress} // Adicionando o onPress ao TouchableOpacity
+    >
+      <Text style={{ color: hasBackground ? '#fff' : '#00bcd4', fontWeight: 'bold', fontSize: 16 }}>{textButton}</Text>
     </TouchableOpacity>
-  )
+  );
 }

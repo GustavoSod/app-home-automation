@@ -1,9 +1,18 @@
 import React from 'react'
 import { View, Text, useColorScheme, Image} from 'react-native';
 import ButtonInit from '../../components/buttonInit';
+import { useNavigation } from '@react-navigation/native';
+import { InitialStackTypes } from '../../routes/initialStack';
 
 export default function Initial() {
+
+  const navigation = useNavigation<InitialStackTypes>();
   const isDarkMode = useColorScheme() === 'dark';
+
+  const handleSignInPress = () => {
+    navigation.navigate('SingIn');
+  };
+
   return (
     <View className='flex justify-center items-center h-full'>
       <View className='flex justify-evenly items-center w-4/6 h-4/5'>
@@ -15,7 +24,7 @@ export default function Initial() {
         </View>
           <View className='w-full'>
             <ButtonInit textButton = 'Sing up' hasBackground={true}/>
-            <ButtonInit textButton = 'Sing in' hasBackground={false}/>
+            <ButtonInit textButton = 'Sing in' hasBackground={false} onPress={handleSignInPress}/>
           </View>
       </View>
     </View>
