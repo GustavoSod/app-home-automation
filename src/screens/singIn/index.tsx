@@ -2,8 +2,16 @@ import React from 'react'
 import { Text, View, Image} from 'react-native'
 import InputForm from '../../components/inputForm'
 import ButtonInit from '../../components/buttonInit'
+import { useNavigation } from '@react-navigation/native'
+import { InitialStackTypes } from '../../routes/initialStack'
 
 export default function SingIn() {
+  const navigation = useNavigation<InitialStackTypes>();
+
+  const handleValidateSingIn = () => {
+    navigation.navigate('Home');
+  };
+
   return (
     <View className='flex h-full justify-center items-center'>
         <View className='flex h-5/6 b w-10/12 justify-evenly'>
@@ -16,7 +24,7 @@ export default function SingIn() {
             <InputForm placeholderText="Name" autoCapitalize="none" autoCorrect={false} keyboardType="default" />
             </View>
             <View>
-                <ButtonInit textButton='Sing in' hasBackground={true}/>
+                <ButtonInit textButton='Sing in' hasBackground={true} onPress={handleValidateSingIn}/>
             </View>
             <View>
                 <Text className='text-stone-500 text-base'>or Sing in with</Text>
