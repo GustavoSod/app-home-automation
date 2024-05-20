@@ -18,6 +18,7 @@ export default function InputForm(props: InputFormProps) {
       className='border-b p-3 mb-4 border-stone-500 w-11/12 text-base'
       placeholder={placeholderText} 
       secureTextEntry={secureTextEntry} 
+      placeholderTextColor={'gray'}
       autoCapitalize={autoCapitalize} 
       autoCorrect={autoCorrect} 
       keyboardType={keyboardType} 
