@@ -1,7 +1,7 @@
 import { createNativeStackNavigator, NativeStackNavigationProp } from "@react-navigation/native-stack";
-import Initial from "../../screens/Initial";
 import { NavigationContainer } from "@react-navigation/native";
-import SingIn from "../../screens/SingIn";
+import Initial from '../../screens/initial'
+import SingIn from '../../screens/singIn'
 import Home from "../../screens/home";
 
 type InitialStackParamList = {

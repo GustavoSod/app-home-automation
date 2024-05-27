@@ -6,9 +6,9 @@ import Header from '../../components/header';
 
 const Home = () => {
   const items = [
-    { value: '90%', metric: 'Alexa Sound', local: 'Kitchen', turned: false },
-    { value: '19º', metric: 'Air Conditioner', local: 'Working Space', turned: true },
-    { value: '30º', metric: 'Temperature', local: 'Room Space', turned: true },
+    { value: '90%', metric: 'Alexa Sound', local: 'Kitchen', turned: true },
+    { value: '19º', metric: 'Air Conditioner', local: 'Working Space', turned: false },
+    { value: '30º', metric: 'Temperature', local: 'Room Space', turned: false },
     { value: '63%', metric: 'Charger', local: 'Game Space', turned: false },
   ];
 
