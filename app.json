@@ -1,4 +1,8 @@
 {
   "name": "HomeAutomation",
-  "displayName": "HomeAutomation"
+  "displayName": "HomeAutomation",
+  "ios": {
+    "bundleIdentifier": "your bundle identifier",
+    "supportsTablet": true
+  }
 }

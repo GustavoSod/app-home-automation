@@ -3,7 +3,7 @@ import { Text, View, Image, TouchableOpacity} from 'react-native'
 
 export default function EnergyMonth({kwh , description} : {kwh: string, description: string}) {
   return (
-    <View className='w-full, justify-center items-center' style={{marginStart: 30, marginEnd: 30}}>
+    <View className='w-full, justify-center items-center' style={{marginStart: 20, marginEnd: 20}}>
         <View className='bg-white w-full h-20 rounded-2xl flex flex-row items-center justify-around mb-5 shadow-sm'>
             <View className='flex-row items-center'>
                 <View className=' bg-cyan-500 rounded-full p-2 items-center justify-center'>
