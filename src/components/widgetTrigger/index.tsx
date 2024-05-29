@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, Switch, Image, Dimensions } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+const { width } = Dimensions.get('window');
 
 type WidgetItem = {
     value: string;
@@ -11,9 +12,8 @@ type WidgetItem = {
 
 type WidgetProps = {
     items: WidgetItem[];
+    handleSwitch: (text: string) => void;
 }
-
-const { width } = Dimensions.get('window');
 
 const widgetsCount = (array: any[], size: number) => {
   const chunkedArr = [];
@@ -23,7 +23,7 @@ const widgetsCount = (array: any[], size: number) => {
   return chunkedArr;
 }
 
-const WidgetTrigger: React.FC<WidgetProps> = ({ items }) => {
+const WidgetTrigger: React.FC<WidgetProps> = ({ items, handleSwitch}) => {
   const chunkedItems = widgetsCount(items, 2);
 
   return (
@@ -38,16 +38,17 @@ const WidgetTrigger: React.FC<WidgetProps> = ({ items }) => {
               style={{ backgroundColor: item.turned ? '#a2e4fa' : '#f2f2f2', width: '45%', height: width * 0.45 }}
             >
               <View className='flex flex-row items-center justify-around w-full'>
-                <View className=' bg-gray-800 rounded-full items-center justify-center p-2'>
+                <View className=' bg-gray-800 rounded-full items-center justify-center p-2.5'>
                   <Image source={require('../../../assets/images/thermometer.png')} style={{ width: 20, height: 20 }} />
                 </View>
                 <Text className='font-bold text-2xl' style={{ color: item.turned ? '#fff' : '#000' }}>{item.value}</Text>
               </View>
-              <View className='pl-3'>
+              <View className='pl-4'>
                 <Text className='text-xs text-gray-500'>{item.local}</Text>
                 <Text className='font-semibold text-base'>{item.metric}</Text>
                 <Switch 
-                  onChange={() => console.log('on')} 
+                  testID="metric-switch"
+                  onValueChange={() => handleSwitch('ola')}
                   value={item.turned} 
                   style={{ transform: [{ scaleX: .9 }, { scaleY: .8 }] }} 
                   trackColor={{ false: '#767577', true: '#374151' }} 
@@ -55,7 +56,6 @@ const WidgetTrigger: React.FC<WidgetProps> = ({ items }) => {
               </View>
             </LinearGradient>
           ))}
-          {chunk.length < 2 && <View style={{ width: '40%' }} />}
         </View>
       ))}
     </View>

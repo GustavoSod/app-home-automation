@@ -12,6 +12,10 @@ const Home = () => {
     { value: '63%', metric: 'Charger', local: 'Game Space', turned: false },
   ];
 
+  const HandleSwitch = () =>{
+    console.log('ola')
+  }
+
   return (
     <SafeAreaView>
       <Header type= 'user'/>
@@ -22,7 +26,7 @@ const Home = () => {
           <Text className='font-semibold text-xl'>Linked to you</Text>
           <Text className='text-gray-600 text-sm'>See all -&gt;</Text>
         </View>
-        <WidgetTrigger items={items} />
+        <WidgetTrigger items={items} handleSwitch={HandleSwitch}/>
       </View>
     </SafeAreaView>
   );
